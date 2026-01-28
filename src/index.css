@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    @apply bg-green-100 dark:bg-stone-800 dark:text-white;
+}
+
+button {
+    @apply cursor-pointer;
+}
+
+@layer base {
+    .house {
+        @apply h-3 w-3;
+        clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
+    }
+
+    .dice {
+        @apply h-10 w-10 flex flex-wrap items-center justify-center bg-white text-black dark:opacity-75 rounded-lg;
+    }
+}
+
+
+.oswald-font {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
