@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
 import type { ICard, Player } from '../consts.ts';
+import { computed } from 'vue'; // Add this import
 
 const { t } = useI18n()
 
@@ -16,6 +17,11 @@ const emit = defineEmits<{
 }>()
 
 const { getCardOwner, players, index } = props;
+
+// Add computed property for reactive filtering
+const playersOnThisCard = computed(() => 
+  players.filter(p => p.position === index)
+);
 
 const handleClick = () => {
   emit('card-clicked', index);
@@ -68,13 +74,12 @@ const getCardHouses = (cardId: number): number => {
 
         <p v-if="card.description" class="uppercase">{{ t(card.description) }}</p>
 
-        <!-- Players on this position -->
+        <!-- Players on this position - Use computed property -->
         <ul class="flex items-center h-6 justify-center gap-1">
-          <li v-for="player in players.filter(p => p.position === index)" class="h-4 w-4 rounded-full"
+          <li v-for="player in playersOnThisCard" class="h-4 w-4 rounded-full"
             :style="{ background: player.color }" :key="player.color">
           </li>
         </ul>
-
 
         <!-- Price -->
         <p v-if="card.price">${{ card.price }}</p>

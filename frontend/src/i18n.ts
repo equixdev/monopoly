@@ -21,6 +21,10 @@ export default createI18n({
             pay100: "Pay $100",
             pay200: "Pay $200",
             titleDeed: "Title deed",
+            "newGame": "New Game",
+            "confirmNewGame": "Are you sure you want to start a new game? All current progress will be lost.",
+            "yourTurn": "Your turn!",
+            "playerTurn": "Player {player}'s turn",
 
             messages: {
                 gameStarted: 'Game started!',
@@ -110,6 +114,11 @@ export default createI18n({
             pay100: "Заплатите $100",
             pay200: "Заплатите $200",
             titleDeed: "Карточка на право собственности",
+            "newGame": "Новая игра",
+            "confirmNewGame": "Вы уверены, что хотите начать новую игру? Весь текущий прогресс будет потерян.",
+            "yourTurn": "Ваш ход!",
+            "playerTurn": "Ход игрока {player}",
+          
 
             messages: {
                 gameStarted: 'Игра началась!',
